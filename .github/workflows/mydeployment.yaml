@@ -13,11 +13,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: test code
         run: npm run test
       - name: Build code
         run: npm run build
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: actions/checkout@v3
       - name: Deploy code
         run: echo "Deploying..."
